@@ -1,6 +1,11 @@
 -- Options
 -- Core Neovim settings
 
+-- Proxy
+vim.env.http_proxy = 'http://127.0.0.1:7897'
+vim.env.https_proxy = 'http://127.0.0.1:7897'
+vim.env.all_proxy = 'socks5://127.0.0.1:7897'
+
 -- Leader keys (must be set before plugins load)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '

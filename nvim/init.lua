@@ -1,6 +1,6 @@
 -- Load core configuration modules
-require 'mars.options'
-require 'mars.keymaps'
+require 'kilox.options'
+require 'kilox.keymaps'
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -222,20 +222,18 @@ require('lazy').setup({
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    main = 'nvim-treesitter.configs',
-    opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
-      auto_install = true,
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = { 'ruby' },
-      },
-      indent = { enable = true, disable = { 'ruby' } },
-    },
+    config = function()
+      require('nvim-treesitter').setup()
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function()
+          pcall(vim.treesitter.start)
+        end,
+      })
+    end,
   },
   {
 
-    'ggandor/leap.nvim',
+    url = 'https://codeberg.org/andyg/leap.nvim',
     config = function()
       vim.keymap.set({ 'n', 'x', 'o' }, 'e', '<Plug>(leap)')
       vim.keymap.set('n', 'E', '<Plug>(leap-from-window)')
@@ -301,15 +299,27 @@ require('lazy').setup({
     end,
   },
 
-  require 'mars.plugins.ai',
-  require 'mars.plugins.telescope',
-  require 'mars.plugins.lsp',
-  require 'mars.plugins.indent_line',
-  require 'mars.plugins.lint',
-  require 'mars.plugins.autopairs',
-  require 'mars.plugins.neo-tree',
-  require 'mars.plugins.gitsigns',
-  require 'mars.plugins.greeter',
+  {
+    '3rd/image.nvim',
+    build = false,
+    opts = {
+      backend = 'sixel',
+      integrations = {
+        markdown = { enabled = true },
+        neorg = { enabled = false },
+      },
+    },
+  },
+
+  require 'kilox.plugins.ai',
+  require 'kilox.plugins.telescope',
+  require 'kilox.plugins.lsp',
+  require 'kilox.plugins.indent_line',
+  require 'kilox.plugins.lint',
+  require 'kilox.plugins.autopairs',
+  require 'kilox.plugins.neo-tree',
+  require 'kilox.plugins.gitsigns',
+  require 'kilox.plugins.greeter',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {

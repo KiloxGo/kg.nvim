@@ -1,4 +1,4 @@
-# ☄️ Mars.nvim
+# ☄️ Kilox.nvim
 
 [English](README.md) | [中文](README_zh.md)
 
@@ -140,7 +140,7 @@ chmod +x install.sh
 ├── install.sh          # 安装脚本
 ├── nvim/
 │   ├── init.lua        # 入口文件
-│   └── lua/mars/
+│   └── lua/kilox/
 │       ├── options.lua     # Vim 选项
 │       ├── keymaps.lua     # 全局快捷键
 │       └── plugins/        # 插件配置

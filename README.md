@@ -1,4 +1,4 @@
-# ☄️ Mars.nvim
+# ☄️ Kilox.nvim
 
 [English](README.md) | [中文](README_zh.md)
 
@@ -140,7 +140,7 @@ The install script will:
 ├── install.sh          # Installation script
 ├── nvim/
 │   ├── init.lua        # Entry point
-│   └── lua/mars/
+│   └── lua/kilox/
 │       ├── options.lua     # Vim options
 │       ├── keymaps.lua     # Global keybindings
 │       └── plugins/        # Plugin configurations

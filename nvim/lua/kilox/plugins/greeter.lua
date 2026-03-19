@@ -31,13 +31,11 @@ local intro_logo = {
   '      ⠘⠛⠛⣿⣿⣿⡇⠀⠈⠣⠀⠀⠀⠀⠀⠀⢀⣄⣴⢿⣿⣿⡌⠑⠢⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ',
   '      ⢸⡆⢸⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⡏⠀⠻⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ',
   '      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ',
-  '            Press <Ctrl-P> to open files               ',
-  '               Type :q to Exit Neovim                  ',
   '                                                       ',
-  '                   Config By Mars                      ',
+  '                   Config By Kilox                      ',
 }
 
-local PLUGIN_NAME = 'mars-greeter'
+local PLUGIN_NAME = 'kilox-greeter'
 local DEFAULT_COLOR = '#848db8'
 local INTRO_LOGO_HEIGHT = #intro_logo
 local INTRO_LOGO_WIDTH = 55
@@ -161,8 +159,8 @@ local function display_greeter(payload)
 end
 
 return {
-  dir = vim.fn.stdpath 'config' .. '/lua/mars/plugins',
-  name = 'mars-greeter',
+  dir = vim.fn.stdpath 'config' .. '/lua/kilox/plugins',
+  name = 'kilox-greeter',
   lazy = false,
   priority = 100,
   config = function()
